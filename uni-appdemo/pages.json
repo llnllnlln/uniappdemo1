@@ -1,0 +1,97 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app123"
+			}
+			
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/other/other",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",//透明渐变导航栏 App-nvue 2.4.4+ 支持
+						"buttons": [ //原生标题栏按钮配置,
+							{
+								"text": "分享" //原生标题栏增加分享按钮，点击事件可通过页面的 onNavigationBarButtonTap 函数进行监听
+							}
+						],
+						"searchInput": {
+							"backgroundColor": "#cccccc",
+							"borderRadius": "6px", //输入框圆角
+							"placeholder": "请输入搜索内容"
+						}
+					}
+				},
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 500
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app11",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true,
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "50px",
+		"fontSize": "10px",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "主页",
+				"iconPath": "static/image/home.png",
+				"selectedIconPath": "static/image/home-h.png"
+			},
+			{
+				"pagePath": "pages/other/other",
+				"text": "其他",
+				"iconPath": "static/image/classify.png",
+				"selectedIconPath": "static/image/classify-h.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/image/user.png",
+				"selectedIconPath": "static/image/user-h.png"
+			}
+		]
+	},
+	"subPackages":[{
+		//此处需对应文件夹名称
+		"root": "pagesA",
+		//此处分包对应各分包页面
+	    "pages": [
+			{
+				"path": "detail/detail",
+				"style": {
+					"navigationBarTitleText": "",
+					"navigationStyle": "custom"
+				}
+			}
+	    ]
+	}],
+	"uniIdRouter": {}
+}
